@@ -1,0 +1,16 @@
+{% extends "vkapp/base.html" %}
+{% block title %}Main page{% endblock title %}
+{% block header %}Welcome to the main page{% endblock header %}
+{% block content %}
+    {% if auth == 0 %}
+        <h2>Welcome to the main page</h2>
+        <a href="{{ href }}">Please, sign in with VK</a>
+    {% else %}
+        <h2>
+            Hello, {{ first_name }} {{ last_name }}
+        </h2>
+        <p>Really glad to see you here</p>
+        <a href="/">Log out</a>
+    {% endif %}
+
+{% endblock content %}
